@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Walina Cafe</title>
+
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+<nav>
+    <h1>WALINA CAFE</h1>
+    <ul>
+        <li onclick="goTo(0)">HOME</li>
+        <li onclick="goTo(1)">BACKGROUND</li>
+        <li onclick="goTo(2)">ROLE</li>
+        <li onclick="goTo(3)">CONTRIBUTE</li>
+    </ul>
+</nav>
+
+<!-- HOME -->
+<div class="page active">
+    <h1>HELLO!!!</h1>
+    <p>Im 'Nur Farhana, the Nasi Lemak vendor at Walina Cafe</p>
+    <img src="web1.jpeg" class="photo">
+
+    <div class="controls">
+        <button onclick="next()">Forward →</button>
+    </div>
+</div>
+
+<!-- BACKGROUND -->
+<div class="page">
+    <h2>BACKGROUND</h2>
+    <h1>WALINA CAFE</h1>
+    <p>
+    The staff at Nasi Lemak Walina Cafe serve their signature Nasi Lemak Ayam Berempah, a dish that has become especially popular among students and lecturers at UniMAP. Known for its rich aroma and satisfying taste, the meal features fragrant coconut rice paired with crispy, well-seasoned spiced fried chicken that is both tender on the inside and crunchy on the outside. It is typically accompanied by traditional side dishes such as sambal, anchovies, peanuts, and boiled egg, creating a balanced combination of flavours. Due to its affordability, generous portion size, and consistent quality, this menu item has gained a strong reputation within the campus community. Many customers choose it not only for its taste but also for the comforting and familiar experience it offers, making it a go-to meal for breakfast, lunch, or even a quick dinner between classes.
+    </p>
+
+    <img src="web1.jpeg" class="photo">
+
+    <div class="controls">
+        <button onclick="prev()">← Back</button>
+        <button onclick="next()">Forward →</button>
+    </div>
+</div>
+
+<!-- ROLE -->
+<div class="page">
+    <h2>ROLE</h2>
+    <h1>WALINA CAFE</h1>
+    <p>
+    We provide a wide variety of meals catered to both students and staff, ensuring there are options to suit different tastes and preferences. Our menu includes popular local dishes such as Chicken Rendang, known for its rich, creamy gravy infused with aromatic spices, as well as Ayam Masak Merah, a sweet and slightly spicy tomato-based chicken dish that is both flavourful and satisfying. For those who prefer beef, the Beef Masak Merah offers a similar bold taste with tender slices of meat cooked in a savoury sauce. In addition, we also serve Tempeh, a nutritious and protein-rich option that is especially appealing to those seeking a lighter or plant-based meal. Of course, our menu would not be complete without the classic Nasi Lemak, a staple Malaysian dish loved for its fragrant rice and variety of complementary side dishes. By offering this diverse selection, we aim to meet the daily dining needs of the campus community while maintaining quality, taste, and affordability.
+    </p>
+
+    <img src="web2.jpeg" class="photo">
+
+    <div class="controls">
+        <button onclick="prev()">← Back</button>
+        <button onclick="next()">Forward →</button>
+    </div>
+</div>
+
+<!-- CONTRIBUTE -->
+<div class="page">
+    <h2>CONTRIBUTE</h2>
+    <h1>WALINA CAFE</h1>
+    <p>
+   Established in 2026, the café was founded with a clear focus on serving the needs of students, particularly those looking for affordable, convenient, and satisfying meals within a campus environment. From the very beginning, the business has aimed to create a welcoming space where students can enjoy local dishes while managing their busy academic schedules. Food preparation typically begins early in the morning to ensure that all menu items are fresh and ready before the first wave of customers arrives. This early preparation also helps maintain consistency in taste and quality throughout the day. However, like many food service operations, the café faces challenges during peak hours, especially during lunch breaks when the demand significantly increases. During these times, staff must work efficiently to manage long queues, maintain quick service, and ensure that food quality is not compromised, making time management and teamwork essential to daily operations.
+    </p>
+
+    <img src="web3.jpeg" class="photo">
+
+    <div class="controls">
+        <button onclick="prev()">← Back</button>
+    </div>
+</div>
+
+<script>
+let current = 0;
+const pages = document.querySelectorAll(".page");
+const navItems = document.querySelectorAll("nav ul li");
+
+function showPage(i){
+    pages[current].classList.remove("active");
+    current = i;
+    pages[current].classList.add("active");
+
+    // highlight navbar
+    navItems.forEach(el => el.style.color = "white");
+    navItems[i].style.color = "#ffd700";
+}
+
+function next(){
+    if(current < pages.length - 1){
+        showPage(current + 1);
+    }
+}
+
+function prev(){
+    if(current > 0){
+        showPage(current - 1);
+    }
+}
+
+function goTo(i){
+    showPage(i);
+}
+</script>
+
+</body>
+</html>
